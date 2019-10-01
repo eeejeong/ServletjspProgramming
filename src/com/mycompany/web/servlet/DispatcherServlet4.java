@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 public class DispatcherServlet4 extends HttpServlet {	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 방법1
+		// 응답 내용 만들기
+		// 방법1: 서블릿에서 직접 만들기
 		/* 
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -26,7 +27,7 @@ public class DispatcherServlet4 extends HttpServlet {
 		out.println("</html>");
 		*/
 		
-		// 방법2
+		// 방법2: jps에서 만들어서 forward하기
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view/dispatcher4.jsp");
 		rd.forward(request, response);
 	}

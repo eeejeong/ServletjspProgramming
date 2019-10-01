@@ -6,17 +6,15 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<h4>dispatcher5.jsp</h4>
+		<h4>dispatcher6.jsp</h4>
 
 		<%-- How1 --%>
-
-		name: <%=request.getAttribute("name")%> <br/>
-		age: <%=request.getAttribute("age")%> <br/>
-	
+		title: <%=request.getAttribute("title")%> <br/>
+		content: <%=request.getAttribute("content")%> <br/>
 		
 		<%-- How2(Expression Language) --%>
-		name: ${name} <br/>
-		age: ${age} <br/>
+		title: ${title} <br/>
+		content: ${content} <br/>
 		
 	</body>
 </html>

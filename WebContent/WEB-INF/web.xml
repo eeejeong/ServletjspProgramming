@@ -3,6 +3,29 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
+	
+	<!-- Listener 설정 -->
+	<listener>
+		<listener-class>com.mycompany.web.contextlistener.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	
+	<!-- CharacterEncodingFilter 설정 -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>com.mycompany.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<!-- DispatcherServlet1 설정 -->
 	<servlet>
@@ -62,6 +85,38 @@
 		<servlet-name>dispatcher5</servlet-name>
 		<url-pattern>/dispatcher5</url-pattern>
 	</servlet-mapping>
-
-
+	
+	<!-- DispatcherServlet6 설정 -->
+	<servlet>
+		<servlet-name>dispatcher6</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet6</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher6</servlet-name>
+		<url-pattern>/dispatcher6</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DispatcherServlet7 설정 -->
+	<servlet>
+		<servlet-name>dispatcher7</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet7</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher7</servlet-name>
+		<url-pattern>/dispatcher7</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DispatcherServlet8 설정 -->
+	<servlet>
+		<servlet-name>dispatcher8</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet8</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher8</servlet-name>
+		<url-pattern>/dispatcher8</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
